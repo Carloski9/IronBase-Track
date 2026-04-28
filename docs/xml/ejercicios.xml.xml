@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo_ejercicios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="esquema_ejercicios.xsd">
+    
+    <ejercicio id="1">
+        <nombre>Sentadilla con Barra</nombre>
+        <grupo_muscular>Piernas</grupo_muscular>
+        <subgrupo_muscular>Cuadriceps</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+
+    <ejercicio id="13">
+        <nombre>Press Banca Mancuernas</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Haz Esternocostal</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Unilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+
+</catalogo_ejercicios>

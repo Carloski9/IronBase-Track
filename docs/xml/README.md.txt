@@ -1,0 +1,1 @@
+Este XML representa el catálogo de ejercicios de la aplicación. Se utilizará para la funcionalidad de Exportación del Administrador desde la interfaz JavaFX.

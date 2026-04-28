@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="catalogo_ejercicios">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ejercicio" maxOccurs="unbounded" minOccurs="1">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="nombre">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="3"/>
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="grupo_muscular" type="xs:string"/>
+                            <xs:element name="subgrupo_muscular" type="xs:string"/>
+                            
+                            <xs:element name="tipo_mecanica">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Multiarticular"/>
+                                        <xs:enumeration value="Monoarticular"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="lateralidad">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Bilateral"/>
+                                        <xs:enumeration value="Unilateral"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="material">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Libre_Barra"/>
+                                        <xs:enumeration value="Libre_Mancuernas"/>
+                                        <xs:enumeration value="Polea"/>
+                                        <xs:enumeration value="Maquina_Discos"/>
+                                        <xs:enumeration value="Maquina_Placas"/>
+                                        <xs:enumeration value="Peso_Corporal"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="id" type="xs:integer" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
