@@ -1,45 +1,47 @@
-# IronBase-Track
-> Sistema integral de gestión de entrenamientos, ejercicios y prescripción de cargas basado en RMs.
-**IronBase Track** es una aplicación multiplataforma diseñada para optimizar el trabajo de los entrenadores personales. Permite la gestión de una base de datos de ejercicios basada en biomecánica, la creación de plantillas de entrenamiento por objetivos, y el cálculo automatizado de cargas (en kg) en función del 1RM actual de cada atleta y el RIR deseado.
+# 🏋️‍♂️ IronBase Track 
+
+IronBase Track es una aplicación de escritorio (Cliente Pesado) desarrollada en **JavaFX** y conectada a una base de datos relacional **MariaDB**. Su objetivo es proporcionar una herramienta integral para la gestión de entrenamientos de fuerza, permitiendo a los entrenadores (Administradores) gestionar el catálogo de ejercicios y rutinas, y a los atletas registrar su progresión (Repetición Máxima - RM).
+
+Este repositorio constituye la entrega final del **Proyecto Intermodular de 1º de DAM**.
 
 ---
 
-## 🎯 ¿Qué problema resuelve?
+## 🚀 Características Principales
 
-Actualmente, muchos entrenadores personales gestionan a sus atletas usando hojas de cálculo complejas o notas, calculando manualmente los porcentajes de RM para cada sesión. Esto es propenso a errores, no escala bien y consume mucho tiempo. 
-
-**IronBase Track automatiza este proceso:**
-- **Para el Entrenador (Gestión):** Ofrece un panel de control (CRUD) de atletas, un catálogo filtrable de ejercicios y un creador de plantillas.
-- **Para el Atleta (Vista):** Proporciona un acceso rápido y responsive a su rutina del día con los pesos **exactos** que debe levantar, adaptados a su progresión actual.
-
----
-
-## 🛠️ Tecnologías Utilizadas (Módulos de 1º DAM)
-
-Este proyecto es el resultado del **Proyecto Intermodular de 1º de DAM**, integrando los conocimientos de los siguientes módulos:
-
-* **[0484] Bases de Datos:** MySQL / MariaDB. Diseño de un modelo relacional que refleja la lógica real del entrenamiento: los ejercicios se categorizan por biomecánica (bilateral, polea, multiarticular), mientras que los objetivos (hipertrofia, pérdida de grasa) se asocian a las *Plantillas* de entrenamiento. Incluye gestión de roles de usuario.
-* **[0485] Programación:** Desarrollo de la lógica de negocio en **Java**, implementando algoritmos de cálculo de progresión de cargas.
-* **[0487] Entornos de Desarrollo:** Control de versiones con **Git/GitHub**, diseño UML (Casos de Uso y Diagrama de Clases) y documentación técnica con Javadoc.
-* **[0373] Lenguajes de Marcas:** Generación de archivos **JSON** para intercambio de rutinas e interfaz **HTML/CSS** responsive para la vista del atleta.
-* **[0483] Sistemas Informáticos:** Scripts de automatización para backups de la base de datos y documentación de despliegue en servidor.
+* **Sistema de Roles:** Acceso diferenciado mediante login para Administradores y Atletas.
+* **Gestión de Catálogo (CRUD):** El administrador puede crear, leer y eliminar ejercicios de la base de datos, con campos validados (mecánica, material, grupo muscular).
+* **Gestión de Plantillas (Rutinas):** Sistema de asignación de rutinas preconfiguradas (Weider, Torso/Pierna, Powerlifting) mediante tablas intermedias (N:M).
+* **Seguridad:** Conexión a la base de datos blindada contra Inyección SQL mediante el uso de `PreparedStatement`.
+* **Exportación de Datos:** Generación de catálogos de ejercicios en formato **XML**, con validación estricta mediante **XSD** para garantizar la integridad estructural.
 
 ---
 
-## 🏗️ Arquitectura y Ampliación (MPO)
+## 🛠️ Tecnologías Utilizadas (Integración de Módulos)
 
-Para cumplir con los estándares de calidad del módulo **MPO (Ampliación de Programación)**, este proyecto aplica un diseño orientado a objetos riguroso:
-
-* **Patrón Arquitectónico:** Implementación estricta de **MVC (Modelo-Vista-Controlador)** separado por paquetes.
-* **Mejora Estructural MPO:** Se ha extraído la lógica de cálculo matemático (porcentajes de RM, RIR, volumen) de los controladores hacia una **Capa de Servicios** dedicada (`CalculadoraCargasService`). Esto garantiza la escalabilidad, facilita el testing y cumple con el principio de responsabilidad única.
+* **[0484] Bases de Datos:** MariaDB. Diseño de un modelo relacional estricto que refleja la lógica real del entrenamiento. Uso de tablas intermedias para resolver relaciones N:M (ej. `Rutina_Ejercicio`). Incluye gestión de roles y seguridad SQL.
+* **[0485] Programación:** Desarrollo de la lógica de negocio y arquitectura MVC/DAO en Java. Interfaz gráfica de escritorio desarrollada con **JavaFX**, implementando un sistema CRUD y control de sesiones.
+* **[0487] Entornos de Desarrollo:** Control de versiones con Git/GitHub, diseño de modelos lógicos y conceptuales (Draw.io), y buenas prácticas de codificación.
+* **[0373] Lenguajes de Marcas:** Generación de estructura de datos mediante **XML** y validación estricta con **XSD** para la exportación del catálogo de ejercicios. Estilización de la interfaz de JavaFX mediante CSS.
+* **[0483] Sistemas Informáticos:** Documentación técnica de despliegue y justificación de arquitectura hardware/software del entorno de ejecución local.
 
 ---
 
-## 🧑‍💻 Perfil Profesional (IPE)
+## 📂 Estructura del Repositorio para Evaluación
 
-### Sobre mí
-Mi nombre es **Carlos Molina**. Soy estudiante de 1º de Desarrollo de Aplicaciones Multiplataforma (DAM) y Entrenador Personal. Actualmente trabajo en una consultora TIC y ofreciendo servicios de entrenamiento personal. Mi perfil profesional en el ambito de la programación se orienta hacia el desarrollo Backend (Java/Spring) y la creación de soluciones de software aplicadas al sector de la salud, el fitness y el rendimiento humano. 
+Para facilitar la corrección por parte del equipo docente, los entregables específicos de cada módulo se encuentran organizados de la siguiente manera:
 
-**Motivación:** Me apasiona unir la lógica de la programación con la biomecánica y la fisiología del entrenamiento para crear herramientas que tengan un impacto real en el rendimiento de los atletas y en la productividad de los entrenadores.
+* 📁 `/src/main/java/com/ironbasetrack...` -> Código fuente Java (Controladores, Modelos y DAOs). **[Prog]**
+* 📁 `/src/main/resources/` -> Archivos `.fxml` y vistas de la interfaz. **[Prog]**
+* 📁 `/docs/sql/` -> Scripts de creación de la base de datos e inserción de datos semilla. **[BD]**
+* 📁 `/docs/diagramas/` -> Modelos Entidad-Relación Conceptual y Modelo Relacional Físico. **[ED] [BD]**
+* 📁 `/docs/xml/` -> Archivos `datos.xml` y `esquema.xsd` con sus evidencias de validación. **[LMySGI]**
+* 📁 `/docs/sistemas/` -> Informe técnico del Entorno de Ejecución (`informe_entorno.md`). **[SI]**
 
-*(Nota: La investigación completa de empresas, perfiles referentes y reflexiones se encuentra en la carpeta `/docs/empleabilidad` del repositorio).*
+---
+
+## ⚙️ Instalación y Ejecución
+
+Para desplegar este proyecto en un entorno local, por favor consulte el documento detallado ubicado en `/docs/sistemas/informe_entorno.md`, donde se especifican los requisitos de la máquina virtual de Java (JVM) y la configuración del servidor MariaDB local.
+
+---
+**Desarrollado por:** [Carlos Molina Abril] - Estudiante de 1º DAM.
