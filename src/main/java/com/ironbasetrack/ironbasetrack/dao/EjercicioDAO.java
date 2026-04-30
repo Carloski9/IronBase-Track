@@ -11,12 +11,10 @@ import java.util.List;
 
 public class EjercicioDAO {
 
-
     public List<Ejercicio> obtenerTodosLosEjercicios() {
         List<Ejercicio> listaEjercicios = new ArrayList<>();
         String sql = "SELECT * FROM ejercicios";
 
-        // El try-with-resources cierra la conexión automáticamente al terminar
         try (Connection con = ConexionDB.conectar();
              PreparedStatement ps = con.prepareStatement(sql);
              ResultSet rs = ps.executeQuery()) {
@@ -43,7 +41,6 @@ public class EjercicioDAO {
     }
 
     public boolean insertarEjercicio(Ejercicio ej) {
-        // Usamos ? para evitar Inyección SQL (¡Buenas prácticas!)
         String sql = "INSERT INTO ejercicios (nombre, grupo_muscular, subgrupo_muscular, tipo_mecanica, lateralidad, material, url_video_demostracion) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection con = ConexionDB.conectar();

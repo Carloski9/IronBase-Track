@@ -44,4 +44,5 @@ public class Ejercicio {
     public String toString() {
         return nombre + " (" + grupoMuscular + ")";
     }
+
 }

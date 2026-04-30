@@ -6,19 +6,18 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class IronBaseApp extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        // 👇 AQUÍ ESTÁ LA LÍNEA MÁGICA CON LA BARRA "/" 👇
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/ejercicios-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(IronBaseApp.class.getResource("/com/ironbasetrack/login-view.fxml"));
 
-        // Creamos la escena y le damos un tamaño de ventana (700x500)
-        Scene scene = new Scene(fxmlLoader.load(), 700, 500);
+        // Creamos la escena y le damos un tamaño de ventana (400x300)
+        Scene scene = new Scene(fxmlLoader.load(), 400, 300);
 
         stage.setTitle("IronBase Track - Catálogo de Ejercicios");
         stage.setScene(scene);
-        stage.show(); // Esto es lo que hace que la ventana se vuelva visible
+        stage.show();
     }
 
     public static void main(String[] args) {
