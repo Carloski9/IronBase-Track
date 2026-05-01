@@ -1,0 +1,507 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalogo_ejercicios xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="esquema_ejercicios.xsd">
+    <ejercicio id="1">
+        <nombre>High Bar Squat</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Global Pierna</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="2">
+        <nombre>Low Bar Squat</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Gluteo y Cadera</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="3">
+        <nombre>Paused Squat</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Global Pierna</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="4">
+        <nombre>Bulgarian Split Squat</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Gluteo y Cuad</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Unilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="5">
+        <nombre>Leg Press</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Global Pierna</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="6">
+        <nombre>Hack Squat</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Vasto Externo</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="7">
+        <nombre>Leg Extension</nombre>
+        <grupo_muscular>Cuadriceps</grupo_muscular>
+        <subgrupo_muscular>Vasto Interno</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="8">
+        <nombre>Conventional Deadlift</nombre>
+        <grupo_muscular>Isquiosurales</grupo_muscular>
+        <subgrupo_muscular>Espalda Baja</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="9">
+        <nombre>Romanian Deadlift (RDL)</nombre>
+        <grupo_muscular>Isquiosurales</grupo_muscular>
+        <subgrupo_muscular>Gluteo y Cadera</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="10">
+        <nombre>Seated Leg Curl</nombre>
+        <grupo_muscular>Isquiosurales</grupo_muscular>
+        <subgrupo_muscular>Isquio Aislado</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="11">
+        <nombre>Lying Leg Curl</nombre>
+        <grupo_muscular>Isquiosurales</grupo_muscular>
+        <subgrupo_muscular>Isquio Aislado</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="12">
+        <nombre>Standing Calf Raise</nombre>
+        <grupo_muscular>Gemelos</grupo_muscular>
+        <subgrupo_muscular>Gastrocnemio</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="13">
+        <nombre>Flat Bench Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Medio</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="14">
+        <nombre>Incline Bench Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Haz Clavicular</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="15">
+        <nombre>Dumbbell Flat Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Medio</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="16">
+        <nombre>Dumbbell Incline Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Haz Clavicular</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="17">
+        <nombre>Smith Machine Incline Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Haz Clavicular</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="18">
+        <nombre>Plate Loaded Chest Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Medio</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="19">
+        <nombre>Machine Chest Press</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Medio</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="20">
+        <nombre>Mid Cable Chest Flys</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Medio</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="21">
+        <nombre>High to Low Cable Flys</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Inferior</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="22">
+        <nombre>Low to High Cable Flys</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Haz Clavicular</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="23">
+        <nombre>Pec Dec Machine</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral Medio</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="24">
+        <nombre>Push Ups</nombre>
+        <grupo_muscular>Pectoral</grupo_muscular>
+        <subgrupo_muscular>Pectoral y Triceps</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Peso_Corporal</material>
+    </ejercicio>
+    <ejercicio id="25">
+        <nombre>Pull Ups</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Ancho</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Peso_Corporal</material>
+    </ejercicio>
+    <ejercicio id="26">
+        <nombre>Lat Pulldown</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Ancho</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="27">
+        <nombre>Neutral Grip Pulldown</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Inferior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="28">
+        <nombre>Straight Arm Pulldown</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Aislado</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="29">
+        <nombre>Pendlay Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Trapecio y Dorsal</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="30">
+        <nombre>Seal Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="31">
+        <nombre>Dumbbell Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Ancho</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Unilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="32">
+        <nombre>T-Bar Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Central</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="33">
+        <nombre>Plate Loaded High Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Alto y Trapecio</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="34">
+        <nombre>Plate Loaded Low Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Inferior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="35">
+        <nombre>Seated Cable Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Central</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="36">
+        <nombre>Seated Machine Row</nombre>
+        <grupo_muscular>Espalda</grupo_muscular>
+        <subgrupo_muscular>Dorsal Central</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="37">
+        <nombre>Military Press</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Anterior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="38">
+        <nombre>Seated Dumbbell Press</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Anterior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="39">
+        <nombre>Smith Machine Shoulder Press</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Anterior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Discos</material>
+    </ejercicio>
+    <ejercicio id="40">
+        <nombre>Machine Shoulder Press</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Anterior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="41">
+        <nombre>Dumbbell Lateral Raise</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Lateral</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="42">
+        <nombre>Cable Lateral Raise</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Lateral</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Unilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="43">
+        <nombre>Machine Lateral Raise</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Lateral</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="44">
+        <nombre>Dumbbell Front Raise</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Anterior</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="45">
+        <nombre>Cable Front Raise</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Anterior</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="46">
+        <nombre>Face Pull</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Posterior</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="47">
+        <nombre>Reverse Pec Dec</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Posterior</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="48">
+        <nombre>Upright Row</nombre>
+        <grupo_muscular>Hombro</grupo_muscular>
+        <subgrupo_muscular>Deltoides Lateral</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="49">
+        <nombre>Barbell Biceps Curl</nombre>
+        <grupo_muscular>Biceps</grupo_muscular>
+        <subgrupo_muscular>Braquial</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="50">
+        <nombre>Dumbbell Alternate Curl</nombre>
+        <grupo_muscular>Biceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Corta</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Unilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="51">
+        <nombre>Incline Dumbbell Curl</nombre>
+        <grupo_muscular>Biceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Larga</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="52">
+        <nombre>Hammer Curl</nombre>
+        <grupo_muscular>Biceps</grupo_muscular>
+        <subgrupo_muscular>Braquiorradial</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="53">
+        <nombre>Cable Rope Hammer Curl</nombre>
+        <grupo_muscular>Biceps</grupo_muscular>
+        <subgrupo_muscular>Braquiorradial</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="54">
+        <nombre>Machine Preacher Curl</nombre>
+        <grupo_muscular>Biceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Corta</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Maquina_Placas</material>
+    </ejercicio>
+    <ejercicio id="55">
+        <nombre>Triceps Rope Pushdown</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Lateral</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="56">
+        <nombre>Triceps V-Bar Pushdown</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Lateral</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="57">
+        <nombre>Overhead Cable Extension</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Larga</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+    <ejercicio id="58">
+        <nombre>Skullcrushers</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Larga</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="59">
+        <nombre>Dumbbell French Press</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Larga</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Mancuernas</material>
+    </ejercicio>
+    <ejercicio id="60">
+        <nombre>Close Grip Bench Press</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Lateral</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Libre_Barra</material>
+    </ejercicio>
+    <ejercicio id="61">
+        <nombre>Triceps Dips</nombre>
+        <grupo_muscular>Triceps</grupo_muscular>
+        <subgrupo_muscular>Cabeza Lateral</subgrupo_muscular>
+        <tipo_mecanica>Multiarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Peso_Corporal</material>
+    </ejercicio>
+    <ejercicio id="62">
+        <nombre>Hanging Leg Raise</nombre>
+        <grupo_muscular>Abdomen</grupo_muscular>
+        <subgrupo_muscular>Recto Abdominal</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Peso_Corporal</material>
+    </ejercicio>
+    <ejercicio id="63">
+        <nombre>Cable Crunch</nombre>
+        <grupo_muscular>Abdomen</grupo_muscular>
+        <subgrupo_muscular>Recto Abdominal</subgrupo_muscular>
+        <tipo_mecanica>Monoarticular</tipo_mecanica>
+        <lateralidad>Bilateral</lateralidad>
+        <material>Polea</material>
+    </ejercicio>
+</catalogo_ejercicios>

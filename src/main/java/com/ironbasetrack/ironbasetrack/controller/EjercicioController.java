@@ -3,17 +3,9 @@ package com.ironbasetrack.ironbasetrack.controller;
 import com.ironbasetrack.ironbasetrack.dao.EjercicioDAO;
 import com.ironbasetrack.ironbasetrack.model.Ejercicio;
 import com.ironbasetrack.ironbasetrack.util.ExportadorXML;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
+import javafx.scene.control.*;
+
 import java.util.Optional;
 
 public class EjercicioController {
@@ -31,39 +23,58 @@ public class EjercicioController {
     @FXML private ComboBox<String> cbMecanica;
     @FXML private ComboBox<String> cbLateralidad;
     @FXML private ComboBox<String> cbMaterial;
-    @FXML private javafx.scene.control.Button btnGuardar;
-    @FXML private javafx.scene.control.Button btnBorrar;
-    @FXML private javafx.scene.control.Button btnExportar;
+    @FXML private javafx.scene.control.TextField txtBuscador;
+    @FXML private javafx.scene.layout.VBox panelAdmin;
+    @FXML private javafx.scene.layout.HBox panelRM;
+    @FXML private javafx.scene.control.TextField txtPesoRM;
 
     @FXML
     public void initialize() {
-        colNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
-        colGrupo.setCellValueFactory(new PropertyValueFactory<>("grupoMuscular"));
-        colSubgrupo.setCellValueFactory(new PropertyValueFactory<>("subgrupoMuscular"));
-        colMecanica.setCellValueFactory(new PropertyValueFactory<>("tipoMecanica"));
-        colLateralidad.setCellValueFactory(new PropertyValueFactory<>("lateralidad"));
-        colMaterial.setCellValueFactory(new PropertyValueFactory<>("material"));
+        // 1. Enlazar las columnas con la clase Ejercicio
+        colNombre.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("nombre"));
+        colGrupo.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("grupoMuscular"));
+        colSubgrupo.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("subgrupoMuscular"));
+        colMecanica.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("tipoMecanica"));
+        colLateralidad.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("lateralidad"));
+        colMaterial.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("material"));
 
-        cargarEjerciciosEnTabla();
         com.ironbasetrack.ironbasetrack.model.Usuario usuarioActual = com.ironbasetrack.ironbasetrack.util.Sesion.getUsuarioActual();
 
-        if (usuarioActual != null && usuarioActual.getIdRol() != 1) {
-            btnGuardar.setVisible(false);
-            btnGuardar.setManaged(false);
-
-            btnBorrar.setVisible(false);
-            btnBorrar.setManaged(false);
-
-            btnExportar.setVisible(false);
-            btnExportar.setManaged(false);
+        if (usuarioActual != null) {
+            if (usuarioActual.getIdRol() == 1) {
+                // Es ADMIN: Ocultamos el panel de RMs
+                panelRM.setVisible(false);
+                panelRM.setManaged(false);
+            } else {
+                // Es ENTRENADOR/ATLETA: Ocultamos los botones de crear/borrar
+                panelAdmin.setVisible(false);
+                panelAdmin.setManaged(false);
+            }
         }
-    }
 
-    private void cargarEjerciciosEnTabla() {
-        EjercicioDAO dao = new EjercicioDAO();
-        // Convierte la lista normal de Java a una lista "Observable" que es la que usan las tablas de JavaFX
-        javafx.collections.ObservableList<Ejercicio> listaObservable = javafx.collections.FXCollections.observableArrayList(dao.obtenerTodosLosEjercicios());
-        tablaEjercicios.setItems(listaObservable);
+        com.ironbasetrack.ironbasetrack.dao.EjercicioDAO dao = new com.ironbasetrack.ironbasetrack.dao.EjercicioDAO();
+        javafx.collections.ObservableList<com.ironbasetrack.ironbasetrack.model.Ejercicio> listaEjercicios =
+                javafx.collections.FXCollections.observableArrayList(dao.obtenerTodosLosEjercicios());
+
+        javafx.collections.transformation.FilteredList<com.ironbasetrack.ironbasetrack.model.Ejercicio> datosFiltrados =
+                new javafx.collections.transformation.FilteredList<>(listaEjercicios, b -> true);
+
+        txtBuscador.textProperty().addListener((observable, oldValue, newValue) -> datosFiltrados.setPredicate(ejercicio -> {
+            if (newValue == null || newValue.isEmpty()) return true;
+
+            String filtro = newValue.toLowerCase();
+
+            if (ejercicio.getNombre().toLowerCase().contains(filtro)) return true;
+            if (ejercicio.getGrupoMuscular().toLowerCase().contains(filtro)) return true;
+            if (ejercicio.getSubgrupoMuscular().toLowerCase().contains(filtro)) return true;
+            return ejercicio.getMaterial().toLowerCase().contains(filtro);
+        }));
+
+        javafx.collections.transformation.SortedList<com.ironbasetrack.ironbasetrack.model.Ejercicio> datosOrdenados =
+                new javafx.collections.transformation.SortedList<>(datosFiltrados);
+        datosOrdenados.comparatorProperty().bind(tablaEjercicios.comparatorProperty());
+
+        tablaEjercicios.setItems(datosOrdenados);
     }
 
     // 3. El method que guarda el ejercicio al pulsar el botón
@@ -178,4 +189,53 @@ public class EjercicioController {
         alerta.setContentText(exito ? "El catálogo se ha exportado correctamente en " + rutaDestino : "Hubo un error al exportar el archivo XML.");
         alerta.showAndWait();
     }
+    @FXML
+    public void onGuardarRMClick() {
+        com.ironbasetrack.ironbasetrack.model.Ejercicio seleccionado = tablaEjercicios.getSelectionModel().getSelectedItem();
+        String pesoTexto = txtPesoRM.getText().trim();
+
+        if (seleccionado == null || pesoTexto.isEmpty()) {
+            javafx.scene.control.Alert alerta = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.WARNING);
+            alerta.setHeaderText(null);
+            alerta.setContentText("Por favor, selecciona un ejercicio de la tabla y escribe el peso.");
+            alerta.showAndWait();
+            return;
+        }
+
+        try {
+            // Sustituir comas por puntos para evitar fallos al parsear a Double
+            double peso = Double.parseDouble(pesoTexto.replace(",", "."));
+            int idUsuario = com.ironbasetrack.ironbasetrack.util.Sesion.getUsuarioActual().getIdUsuario();
+            int idEjercicio = seleccionado.getIdEjercicio();
+
+            String sql = "INSERT INTO atleta_rm (id_usuario, id_ejercicio, peso_rm, fecha_consecucion) VALUES (?, ?, ?, CURRENT_DATE)";
+
+            try (java.sql.Connection con = com.ironbasetrack.ironbasetrack.dao.ConexionDB.conectar();
+                 java.sql.PreparedStatement ps = con.prepareStatement(sql)) {
+
+                ps.setInt(1, idUsuario);
+                ps.setInt(2, idEjercicio);
+                ps.setDouble(3, peso);
+
+                ps.executeUpdate();
+
+                javafx.scene.control.Alert exito = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.INFORMATION);
+                exito.setHeaderText(null);
+                exito.setContentText("¡RM de " + peso + " kg registrado en " + seleccionado.getNombre() + "!");
+                exito.showAndWait();
+
+                txtPesoRM.clear();
+
+            } catch (java.sql.SQLException e) {
+                System.err.println("Error de Base de Datos al guardar RM: " + e.getMessage());
+            }
+
+        } catch (NumberFormatException e) {
+            javafx.scene.control.Alert error = new javafx.scene.control.Alert(javafx.scene.control.Alert.AlertType.ERROR);
+            error.setHeaderText(null);
+            error.setContentText("El peso introducido no es válido. Usa números (ej: 100.5).");
+            error.showAndWait();
+        }
+    }
+
 }
