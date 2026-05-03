@@ -9,7 +9,7 @@ public class ConexionDB {
     // Cambia el puerto 3306 si usas otro distinto
     private static final String URL = "jdbc:mariadb://localhost:3306/ironbasetrack";
     private static final String USER = "root";
-    private static final String PASSWORD = ""; // En XAMPP suele estar vacía
+    private static final String PASSWORD = "";
 
     public static Connection conectar() {
         try {

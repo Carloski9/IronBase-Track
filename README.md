@@ -25,23 +25,25 @@ Este repositorio constituye la entrega final del **Proyecto Intermodular de 1º 
 * **Sistemas Informáticos:** Documentación técnica de despliegue y justificación de arquitectura hardware/software del entorno de ejecución local.
 
 
-
 ## Estructura del Repositorio para Evaluación
 
-Para facilitar la corrección por parte del equipo docente, los entregables específicos de cada módulo se encuentran organizados de la siguiente manera:
+Para facilitar la corrección por parte del equipo docente, el código, el ejecutable y los entregables específicos de cada módulo se encuentran organizados de la siguiente manera:
 
-*  `/src/main/java/com/ironbasetrack...` -> Código fuente Java (Controladores, Modelos y DAOs). **[Prog]**
-*  `/src/main/resources/` -> Archivos `.fxml` y vistas de la interfaz. **[Prog]**
-*  `/docs/sql/` -> Scripts de creación de la base de datos e inserción de datos semilla. **[BD]**
-*  `/docs/diagramas/` -> Modelos Entidad-Relación Conceptual y Modelo Relacional Físico. **[ED] [BD]**
-*  `/docs/xml/` -> Archivos `datos.xml` y `esquema.xsd` con sus evidencias de validación. **[LMySGI]**
-*  `/docs/sistemas/` -> Informe técnico del Entorno de Ejecución (`informe_entorno.md`). **[SI]**
-
+*   **`IronBaseTrack.jar`** -> Archivo ejecutable de la aplicación compilada. **[Prog]**
+*   **`/src/`** -> Código fuente Java (Controladores, Modelos, DAOs) y vistas de interfaz (`.fxml`). **[Prog]**
+*   **`/docs/diagramas/`** -> Modelos Entidad-Relación y Modelo Relacional. **[ED] [BD]**
+*   **`/docs/xml/`** -> Archivos de exportación generados (ej. `datos.xml`). **[LM]**
+*   **`/docs/material_asignaturas/base_de_datos/`** -> Scripts de creación e inserción SQL. **[BD]**
+*   **`/docs/material_asignaturas/entornos_de_desarrollo/`** -> Documentación específica de la asignatura. **[ED]**
+*   **`/docs/material_asignaturas/lengua_de_marcas/`** -> Documentación y esquemas de validación XSD. **[LM]**
+*   **`/docs/material_asignaturas/programacion/`** -> Documentación técnica y memorias del software. **[Prog]**
+*   **`/docs/material_asignaturas/sistemas_informaticos/`** -> Informe técnico del Entorno de Ejecución y arquitectura. **[SI]**
+*   **`/docs/material_asignaturas/ampliacion_de_programacion/`** -> Documentación técnica sobre optimizaciones al proyecto. **[AProg]**
 
 
 ## Instalación y Ejecución
 
-Para desplegar este proyecto en un entorno local, por favor consulte el documento detallado ubicado en `/docs/sistemas/informe_entorno.md`, donde se especifican los requisitos de la máquina virtual de Java (JVM) y la configuración del servidor MariaDB local.
+Para desplegar este proyecto en un entorno local, por favor consulte el documento detallado ubicado en `/docs/material_asignaturas/sistemas_informaticos/README_Sistemas_informaticos.md`, donde se especifican los requisitos de la máquina virtual de Java (JVM) y la configuración del servidor MariaDB local.
 
 
 **Desarrollado por:** [Carlos Molina Abril] - Estudiante de 1º DAM.
