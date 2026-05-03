@@ -1,0 +1,43 @@
+SELECT * FROM ejercicios 
+ORDER BY grupo_muscular ASC, nombre ASC;
+
+
+SELECT u.id_usuario, u.nombre, u.email, r.nombre_rol 
+FROM usuarios u
+INNER JOIN roles r ON u.id_rol = r.id_rol;
+
+
+SELECT grupo_muscular, COUNT(*) as total_ejercicios 
+FROM ejercicios 
+GROUP BY grupo_muscular
+ORDER BY total_ejercicios DESC;
+
+
+SELECT nombre, grupo_muscular, material 
+FROM ejercicios 
+WHERE material IN ('Polea', 'Maquina_Placas');
+
+
+SELECT nombre, subgrupo_muscular, material 
+FROM ejercicios 
+WHERE grupo_muscular = 'Pectoral' AND tipo_mecanica = 'Multiarticular';
+
+
+SELECT * FROM ejercicios ORDER BY grupo_muscular ASC, nombre ASC;
+
+
+SELECT u.nombre, u.email, r.nombre_rol, r.descripcion 
+FROM usuarios u
+INNER JOIN roles r ON u.id_rol = r.id_rol;
+
+
+SELECT nombre, tipo_mecanica, material 
+FROM ejercicios 
+WHERE grupo_muscular = 'Pectoral' AND nombre LIKE '%Press%';
+
+
+SELECT e.nombre AS ejercicio, arm.peso_rm AS kg_levantados, arm.fecha_consecucion 
+FROM atleta_rm arm
+INNER JOIN ejercicios e ON arm.id_ejercicio = e.id_ejercicio
+WHERE arm.id_usuario = 3
+ORDER BY arm.fecha_consecucion DESC;

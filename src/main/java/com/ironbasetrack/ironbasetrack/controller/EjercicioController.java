@@ -1,5 +1,6 @@
 package com.ironbasetrack.ironbasetrack.controller;
 
+import com.ironbasetrack.ironbasetrack.IronBaseApp;
 import com.ironbasetrack.ironbasetrack.dao.EjercicioDAO;
 import com.ironbasetrack.ironbasetrack.model.Ejercicio;
 import com.ironbasetrack.ironbasetrack.util.ExportadorXML;
@@ -38,15 +39,20 @@ public class EjercicioController {
         colLateralidad.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("lateralidad"));
         colMaterial.setCellValueFactory(new javafx.scene.control.cell.PropertyValueFactory<>("material"));
 
+        // 2. Llenar los ComboBox del panel de administración
+        cbMecanica.getItems().addAll("Multiarticular", "Monoarticular");
+        cbLateralidad.getItems().addAll("Bilateral", "Unilateral");
+        cbMaterial.getItems().addAll("Libre_Barra", "Libre_Mancuernas", "Polea", "Maquina_Discos", "Maquina_Placas", "Peso_Corporal");
+
         com.ironbasetrack.ironbasetrack.model.Usuario usuarioActual = com.ironbasetrack.ironbasetrack.util.Sesion.getUsuarioActual();
 
         if (usuarioActual != null) {
             if (usuarioActual.getIdRol() == 1) {
-                // Es ADMIN: Ocultamos el panel de RMs
+                // Para ADMIN: Ocultamos el panel de RMs
                 panelRM.setVisible(false);
                 panelRM.setManaged(false);
             } else {
-                // Es ENTRENADOR/ATLETA: Ocultamos los botones de crear/borrar
+                // Para ENTRENADOR/ATLETA: Ocultamos los botones de crear/borrar
                 panelAdmin.setVisible(false);
                 panelAdmin.setManaged(false);
             }
@@ -236,6 +242,39 @@ public class EjercicioController {
             error.setContentText("El peso introducido no es válido. Usa números (ej: 100.5).");
             error.showAndWait();
         }
+    }
+
+    @FXML
+    public void onLogoutClick(javafx.event.ActionEvent event) {
+        // 1. Creamos la alerta de confirmación
+        Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
+        confirmacion.setTitle("Cerrar Sesión");
+        confirmacion.setHeaderText("¿Estás seguro de que deseas salir?");
+        confirmacion.setContentText("Tendrás que volver a introducir tus credenciales para entrar.");
+
+        Optional<ButtonType> resultado = confirmacion.showAndWait();
+
+        // 2. Si el usuario pulsa en "Aceptar", cerramos la sesión
+        if (resultado.isPresent() && resultado.get() == ButtonType.OK) {
+
+            com.ironbasetrack.ironbasetrack.util.Sesion.setUsuarioActual(null);
+
+            try {
+                javafx.fxml.FXMLLoader fxmlLoader = new javafx.fxml.FXMLLoader(IronBaseApp.class.getResource("/com/ironbasetrack/login-view.fxml"));
+
+                javafx.scene.Scene scene = new javafx.scene.Scene(fxmlLoader.load(), 400, 350);
+                javafx.stage.Stage stage = (javafx.stage.Stage) ((javafx.scene.Node) event.getSource()).getScene().getWindow();
+
+                stage.setScene(scene);
+                stage.setTitle("IronBase Track - Acceso");
+                stage.centerOnScreen();
+
+            } catch (Exception e) {
+                System.err.println("Ha fallado el Logout:");
+                e.printStackTrace();
+            }
+        }
+
     }
 
 }

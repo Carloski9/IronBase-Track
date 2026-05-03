@@ -1,0 +1,82 @@
+
+CREATE TABLE roles (
+    id_rol INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre_rol VARCHAR(50) NOT NULL,
+    descripcion VARCHAR(255)
+);
+
+
+CREATE TABLE usuarios (
+    id_usuario INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_rol INT(11) NOT NULL,
+    nombre VARCHAR(100) NOT NULL,
+    apellidos VARCHAR(100),
+    email VARCHAR(150) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    fecha_nacimiento DATE,
+    peso_corporal DECIMAL(5,2),
+    altura DECIMAL(5,2),
+    fecha_registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_rol) REFERENCES roles(id_rol)
+);
+
+
+CREATE TABLE ejercicios (
+    id_ejercicio INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    grupo_muscular VARCHAR(50) NOT NULL,
+    subgrupo_muscular VARCHAR(100),
+    tipo_mecanica ENUM('Multiarticular', 'Monoarticular') NOT NULL,
+    lateralidad ENUM('Bilateral', 'Unilateral') NOT NULL,
+    material ENUM('Libre_Barra', 'Libre_Mancuernas', 'Polea', 'Maquina_Discos', 'Maquina_Placas', 'Peso_Corporal') NOT NULL,
+    url_video_demostracion VARCHAR(255)
+);
+
+
+CREATE TABLE plantillas (
+    id_plantilla INT(11) AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    objetivo ENUM('Hipertrofia', 'Fuerza', 'Perdida_Grasa', 'Rehabilitacion', 'Rendimiento') NOT NULL,
+    dias_por_semana INT(11),
+    descripcion TEXT
+);
+
+
+CREATE TABLE atleta_plantilla (
+    id_asignacion INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT(11) NOT NULL,
+    id_plantilla INT(11) NOT NULL,
+    fecha_inicio DATE,
+    fecha_fin DATE,
+    activa TINYINT(1) DEFAULT 1,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_plantilla) REFERENCES plantillas(id_plantilla)
+);
+
+
+CREATE TABLE atleta_rm (
+    id_rm INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT(11) NOT NULL,
+    id_ejercicio INT(11) NOT NULL,
+    peso_rm DECIMAL(6,2) NOT NULL,
+    fecha_consecucion DATE NOT NULL,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id_usuario),
+    FOREIGN KEY (id_ejercicio) REFERENCES ejercicios(id_ejercicio)
+);
+
+
+CREATE TABLE rutina_ejercicio (
+    id_rutina INT(11) AUTO_INCREMENT PRIMARY KEY,
+    id_plantilla INT(11) NOT NULL,
+    id_ejercicio INT(11) NOT NULL,
+    dia_entrenamiento INT(11),
+    orden_ejercicio INT(11),
+    series INT(11),
+    repeticiones_objetivo VARCHAR(20),
+    rir_objetivo INT(11),
+    porcentaje_rm_sugerido DECIMAL(5,2),
+    descanso_segundos INT(11),
+    notas_entrenador VARCHAR(255),
+    FOREIGN KEY (id_plantilla) REFERENCES plantillas(id_plantilla),
+    FOREIGN KEY (id_ejercicio) REFERENCES ejercicios(id_ejercicio)
+);
